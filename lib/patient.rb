@@ -21,7 +21,7 @@ attr_accessor :name
     Appointment.all.select {|info| info.patient == self}
   end
 
-  def patients
+  def doctors
     appointments.map {|info| info.doctor}
   end
 
