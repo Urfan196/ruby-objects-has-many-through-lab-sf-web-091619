@@ -13,4 +13,16 @@ attr_accessor :name
     @@all
   end
 
+  def new_appointment (date, doctor)
+    Appointment.new(date, self, doctor)
+  end
+
+  def appointments
+    Appointment.all.select {|info| info.patient == self}
+  end
+
+  def patients
+    appointments.map {|info| info.doctor}
+  end
+
 end
